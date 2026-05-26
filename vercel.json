@@ -8,20 +8,12 @@
         "distDir": "dist/client",
         "buildCommand": "npm run build"
       }
-    },
-    {
-      "src": "api/index.js",
-      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "^/assets/(.*)$",
-      "dest": "/dist/client/assets/$1"
-    },
-    {
       "src": "^/(.*)$",
-      "dest": "/api/index.js"
+      "dest": "/index.html"
     }
   ]
 }
