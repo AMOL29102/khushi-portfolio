@@ -24,7 +24,13 @@ const groups = [
     title: "Familiar With",
     icon: FlaskConical,
     accent: "mint",
-    items: ["HPLC", "Dissolution Apparatus", "Spectroscopy", "Chromatography", "Avogadro"],
+    items: [
+      "HPLC",
+      "Dissolution Apparatus",
+      "Spectroscopy",
+      "Chromatography",
+      "Avogadro",
+    ],
   },
   {
     title: "IT Skills",
@@ -58,8 +64,8 @@ export function Skills() {
                   g.accent === "primary"
                     ? "bg-primary/15 text-primary"
                     : g.accent === "mint"
-                    ? "bg-mint/20 text-mint-foreground"
-                    : "bg-accent text-accent-foreground"
+                      ? "bg-mint/20 text-mint-foreground"
+                      : "bg-accent text-accent-foreground"
                 }`}
               >
                 <g.icon className="h-5 w-5" />
@@ -70,13 +76,19 @@ export function Skills() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.04 } } }}
+              variants={{
+                hidden: {},
+                show: { transition: { staggerChildren: 0.04 } },
+              }}
               className="flex flex-wrap gap-2"
             >
               {g.items.map((item) => (
                 <motion.span
                   key={item}
-                  variants={{ hidden: { opacity: 0, scale: 0.85 }, show: { opacity: 1, scale: 1 } }}
+                  variants={{
+                    hidden: { opacity: 0, scale: 0.85 },
+                    show: { opacity: 1, scale: 1 },
+                  }}
                   whileHover={{ y: -2 }}
                   className="px-3 py-1.5 rounded-full text-xs font-medium border border-border bg-card/60 hover:border-primary hover:text-primary transition-colors"
                 >

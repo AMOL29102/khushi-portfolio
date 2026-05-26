@@ -50,9 +50,13 @@ export function Education() {
               </div>
               <div className="ml-14 sm:ml-0 sm:w-1/2 sm:px-8">
                 <div className="glass rounded-2xl p-6 hover:-translate-y-1 transition-transform">
-                  <div className="text-xs text-mint font-semibold mb-2">{item.period}</div>
+                  <div className="text-xs text-mint font-semibold mb-2">
+                    {item.period}
+                  </div>
                   <h3 className="text-lg font-semibold">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">{item.place}</p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {item.place}
+                  </p>
                   <div className="mt-3 inline-flex px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-medium">
                     {item.score}
                   </div>

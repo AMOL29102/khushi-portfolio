@@ -29,7 +29,9 @@ export function Section({
               {eyebrow}
             </div>
           )}
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">{title}</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+            {title}
+          </h2>
           {description && (
             <p className="mt-3 text-muted-foreground">{description}</p>
           )}

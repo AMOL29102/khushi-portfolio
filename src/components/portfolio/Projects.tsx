@@ -52,7 +52,9 @@ export function Projects() {
                   <p.icon className="h-6 w-6" />
                 </span>
               </div>
-              <div className="text-xs text-mint font-semibold mb-2">{p.year} · {p.tag}</div>
+              <div className="text-xs text-mint font-semibold mb-2">
+                {p.year} · {p.tag}
+              </div>
               <h3 className="font-semibold text-lg leading-snug">{p.title}</h3>
               <p className="mt-3 text-sm text-muted-foreground">{p.desc}</p>
             </div>

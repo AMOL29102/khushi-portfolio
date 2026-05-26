@@ -19,10 +19,14 @@ export const Route = createFileRoute("/")({
         content:
           "Portfolio of Khushi Dilip Jain — Bachelor of Pharmacy student seeking pharmaceutical industry internships. Projects, skills, certifications and achievements.",
       },
-      { property: "og:title", content: "Khushi Dilip Jain — B.Pharm Portfolio" },
+      {
+        property: "og:title",
+        content: "Khushi Dilip Jain — B.Pharm Portfolio",
+      },
       {
         property: "og:description",
-        content: "Pharmaceutical sciences student portfolio: education, skills, research projects and certifications.",
+        content:
+          "Pharmaceutical sciences student portfolio: education, skills, research projects and certifications.",
       },
     ],
   }),

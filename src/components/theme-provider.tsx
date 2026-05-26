@@ -10,9 +10,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
-    const stored = (typeof window !== "undefined" && localStorage.getItem("theme")) as Theme | null;
+    const stored = (typeof window !== "undefined" &&
+      localStorage.getItem("theme")) as Theme | null;
     const prefersDark =
-      typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
     const initial: Theme = stored ?? (prefersDark ? "dark" : "light");
     setTheme(initial);
   }, []);
@@ -24,7 +26,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, [theme]);
 
   return (
-    <ThemeCtx.Provider value={{ theme, toggle: () => setTheme(theme === "dark" ? "light" : "dark") }}>
+    <ThemeCtx.Provider
+      value={{
+        theme,
+        toggle: () => setTheme(theme === "dark" ? "light" : "dark"),
+      }}
+    >
       {children}
     </ThemeCtx.Provider>
   );

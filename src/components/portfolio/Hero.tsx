@@ -11,7 +11,10 @@ export function Hero() {
 
   return (
     <>
-      <section id="home" className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 px-4 sm:px-6">
+      <section
+        id="home"
+        className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 px-4 sm:px-6"
+      >
         <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
@@ -40,38 +43,55 @@ export function Hero() {
             animate="show"
             variants={{
               hidden: {},
-              show: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } },
+              show: {
+                transition: { staggerChildren: 0.12, delayChildren: 0.2 },
+              },
             }}
             className="text-center md:text-left"
           >
             <motion.div
-              variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                show: { opacity: 1, y: 0 },
+              }}
               className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-xs text-muted-foreground mb-5"
             >
               <Sparkles className="h-3.5 w-3.5 text-mint" />
               Open to Pharmaceutical Internships
             </motion.div>
             <motion.h1
-              variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                show: { opacity: 1, y: 0 },
+              }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight"
             >
               Hi, I'm <span className="text-gradient">Khushi Dilip Jain</span>
             </motion.h1>
             <motion.p
-              variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                show: { opacity: 1, y: 0 },
+              }}
               className="mt-4 text-lg sm:text-xl text-foreground/80"
             >
               Bachelor of Pharmacy (B.Pharm) Student
             </motion.p>
             <motion.p
-              variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                show: { opacity: 1, y: 0 },
+              }}
               className="mt-3 text-muted-foreground max-w-xl md:max-w-none"
             >
               Looking for an internship in the Pharmaceutical Industry to apply
               my knowledge and skills.
             </motion.p>
             <motion.div
-              variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                show: { opacity: 1, y: 0 },
+              }}
               className="mt-8 flex flex-wrap gap-3 justify-center md:justify-start"
             >
               <Button
@@ -107,11 +127,17 @@ export function Hero() {
             <div className="flex items-center justify-between gap-4 p-5 border-b border-border">
               <div>
                 <h3 className="font-semibold">Resume Preview</h3>
-                <p className="text-xs text-muted-foreground">Preview and download the resume from inside.</p>
+                <p className="text-xs text-muted-foreground">
+                  Preview and download the resume from inside.
+                </p>
               </div>
               <div className="flex items-center gap-2">
                 <Button size="sm" className="rounded-full" asChild>
-                  <a href={resumePdf} download="resume.pdf" className="inline-flex items-center gap-2">
+                  <a
+                    href={resumePdf}
+                    download="resume.pdf"
+                    className="inline-flex items-center gap-2"
+                  >
                     <Download className="h-4 w-4" /> Download
                   </a>
                 </Button>

@@ -12,7 +12,8 @@ export function Footer() {
             <span className="text-gradient">Khushi Dilip Jain</span>
           </div>
           <p className="text-sm text-muted-foreground max-w-xs">
-            B.Pharm student passionate about pharmaceutical research, formulation, and clinical sciences.
+            B.Pharm student passionate about pharmaceutical research,
+            formulation, and clinical sciences.
           </p>
         </div>
 
@@ -20,12 +21,18 @@ export function Footer() {
           <h4 className="text-sm font-semibold mb-4">Get in touch</h4>
           <ul className="space-y-3 text-sm">
             <li>
-              <a href="mailto:ph22464207@gmail.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="mailto:ph22464207@gmail.com"
+                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Mail className="h-4 w-4" /> ph22464207@gmail.com
               </a>
             </li>
             <li>
-              <a href="tel:+919370804776" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="tel:+919370804776"
+                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Phone className="h-4 w-4" /> +91 93708 04776
               </a>
             </li>

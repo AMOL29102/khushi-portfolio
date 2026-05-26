@@ -68,7 +68,9 @@ export function Certifications() {
             </div>
             <h3 className="font-semibold leading-snug">{c.title}</h3>
             <p className="text-sm text-muted-foreground mt-2">{c.issuer}</p>
-            <div className="mt-4 text-xs text-primary font-medium">View certificate →</div>
+            <div className="mt-4 text-xs text-primary font-medium">
+              View certificate →
+            </div>
           </motion.button>
         ))}
       </div>
@@ -98,14 +100,20 @@ export function Certifications() {
             >
               <div className="flex items-center justify-between gap-4 p-5 border-b border-border">
                 <div className="min-w-0">
-                  <h3 className="font-semibold truncate">{certs[active].title}</h3>
+                  <h3 className="font-semibold truncate">
+                    {certs[active].title}
+                  </h3>
                   <p className="text-xs text-muted-foreground truncate">
                     {certs[active].issuer} · {certs[active].date}
                   </p>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
                   <Button size="sm" className="rounded-full" asChild>
-                    <a href={certs[active].pdf} download className="inline-flex items-center gap-2">
+                    <a
+                      href={certs[active].pdf}
+                      download
+                      className="inline-flex items-center gap-2"
+                    >
                       <Download className="h-4 w-4" />
                       Download PDF
                     </a>

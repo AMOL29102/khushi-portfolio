@@ -3,12 +3,28 @@ import { Trophy, Medal, Lightbulb, Shirt, Music, Star } from "lucide-react";
 import { Section } from "./Section";
 
 const items = [
-  { icon: Trophy, text: "1st prize — Model Making Competition (SVKM, Dhule)", rank: "1st" },
+  {
+    icon: Trophy,
+    text: "1st prize — Model Making Competition (SVKM, Dhule)",
+    rank: "1st",
+  },
   { icon: Medal, text: "2nd prize — Carrom, Sports Day", rank: "2nd" },
-  { icon: Lightbulb, text: "Inductee — Wadhwani Foundation Entrepreneurship Program", rank: "Select" },
-  { icon: Shirt, text: '2nd prize — "Traditional Day 2025" (CHAVA ACT)', rank: "2nd" },
+  {
+    icon: Lightbulb,
+    text: "Inductee — Wadhwani Foundation Entrepreneurship Program",
+    rank: "Select",
+  },
+  {
+    icon: Shirt,
+    text: '2nd prize — "Traditional Day 2025" (CHAVA ACT)',
+    rank: "2nd",
+  },
   { icon: Music, text: '2nd prize — "Flash Mob" (Fiesta 2025)', rank: "2nd" },
-  { icon: Star, text: 'Consolation — "Annual Function 2024" (Dance)', rank: "Hon." },
+  {
+    icon: Star,
+    text: 'Consolation — "Annual Function 2024" (Dance)',
+    rank: "Hon.",
+  },
 ];
 
 export function Extracurriculars() {
