@@ -25,6 +25,22 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    e.preventDefault();
+    const targetId = href.replace(/.*\#/, "");
+    const elem = document.getElementById(targetId);
+    if (elem) {
+      window.scrollTo({
+        top: elem.getBoundingClientRect().top + window.scrollY - 80,
+        behavior: "smooth",
+      });
+      window.history.pushState(null, "", href);
+    }
+  };
+
   return (
     <motion.header
       initial={{ y: -40, opacity: 0 }}
@@ -39,7 +55,11 @@ export function Navbar() {
           scrolled ? "glass shadow-lg mx-3 sm:mx-auto" : ""
         } px-4 py-3`}
       >
-        <a href="#home" className="flex items-center gap-2 font-semibold">
+        <a
+          href="#home"
+          onClick={(e) => handleScroll(e, "#home")}
+          className="flex items-center gap-2 font-semibold"
+        >
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground">
             <Pill className="h-5 w-5" />
           </span>
@@ -51,6 +71,7 @@ export function Navbar() {
             <li key={l.href}>
               <a
                 href={l.href}
+                onClick={(e) => handleScroll(e, l.href)}
                 className="px-3 py-2 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
               >
                 {l.label}
@@ -60,8 +81,17 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon" onClick={toggle} aria-label="Toggle theme">
-            {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggle}
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? (
+              <Sun className="h-5 w-5" />
+            ) : (
+              <Moon className="h-5 w-5" />
+            )}
           </Button>
           <Button
             variant="ghost"
@@ -87,7 +117,10 @@ export function Navbar() {
               {links.map((l) => (
                 <li key={l.href}>
                   <a
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => {
+                      setOpen(false);
+                      handleScroll(e, l.href);
+                    }}
                     href={l.href}
                     className="block px-3 py-2 rounded-lg text-sm hover:bg-secondary"
                   >
