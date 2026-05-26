@@ -30,3 +30,29 @@ const html = `<!DOCTYPE html>
 </html>`;
 
 fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf8');
+
+// Move files to the root of 'dist' for Vercel to pick them up correctly
+const distDir = path.resolve(process.cwd(), 'dist');
+
+// Move assets folder
+const distAssets = path.join(distDir, 'assets');
+if (fs.existsSync(distAssets)) {
+  fs.rmSync(distAssets, { recursive: true, force: true });
+}
+fs.renameSync(path.join(dir, 'assets'), distAssets);
+
+// Move index.html
+fs.renameSync(path.join(dir, 'index.html'), path.join(distDir, 'index.html'));
+
+// Also move any other files in dist/client (like .assetsignore)
+const remainingFiles = fs.readdirSync(dir);
+for (const file of remainingFiles) {
+  fs.renameSync(path.join(dir, file), path.join(distDir, file));
+}
+
+// Clean up client and server directories as they are no longer needed
+fs.rmSync(dir, { recursive: true, force: true });
+const serverDir = path.join(distDir, 'server');
+if (fs.existsSync(serverDir)) {
+  fs.rmSync(serverDir, { recursive: true, force: true });
+}
