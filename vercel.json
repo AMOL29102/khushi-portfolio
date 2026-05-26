@@ -1,11 +1,12 @@
-{
+﻿{
   "version": 3,
   "builds": [
     {
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist/client"
+        "distDir": "dist/client",
+        "buildCommand": "npm run build"
       }
     },
     {
@@ -16,10 +17,10 @@
   "routes": [
     {
       "src": "^/assets/(.*)$",
-      "dest": "/assets/$1"
+      "dest": "/dist/client/assets/$1"
     },
     {
-      "src": "^(.*)$",
+      "src": "^/(.*)$",
       "dest": "/api/index.js"
     }
   ]
