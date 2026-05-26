@@ -3,6 +3,7 @@ import { Moon, Sun, Menu, X, Pill } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/components/theme-provider";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "@tanstack/react-router";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -17,6 +18,7 @@ export function Navbar() {
   const { theme, toggle } = useTheme();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -37,7 +39,7 @@ export function Navbar() {
         top: elem.getBoundingClientRect().top + window.scrollY - 80,
         behavior: "smooth",
       });
-      window.history.pushState(null, "", href);
+      navigate({ hash: targetId, replace: true, resetScroll: false });
     }
   };
 
